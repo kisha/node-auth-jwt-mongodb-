@@ -14,11 +14,13 @@ mongoose.connect(
 
 //Import Routes
 const authRoute = require("./routes/auth");
+const privateRoute = require("./routes/private");
 
 //Middleware 
 app.use(express.json());
 //Route Middleware 
 app.use('/api/user', authRoute);
+app.use('/api/private', privateRoute);
 
 
 //Models for our data
